@@ -1,0 +1,178 @@
+/* 机电运维数智化平台 — 基础样式（严格按 MasterGo 设计稿 8.22, 375x812） */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, 'PingFang SC', 'HarmonyOS Sans SC', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  background: #e6edf8;
+  color: #242424;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Vue2 挂载后会用 App.vue 根元素替换 #app，因此外壳样式挂在 .app-inner 上 */
+.app-inner,
+#app {
+  position: relative;
+  max-width: 375px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #eef6ff;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(31, 62, 114, 0.16);
+}
+
+.page {
+  position: relative;
+  height: 100vh;
+  background: #eef6ff;
+  overflow: hidden;
+}
+
+.page-scroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.page-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* 顶部渐变背景 375x186 */
+.top-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 186px;
+  background:
+    linear-gradient(171deg, rgba(0, 113, 255, 0.6) -56%, rgba(0, 62, 231, 0.51) 119%),
+    linear-gradient(179deg, #2c66f6 0%, #2c12ee 98%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.top-bg .deco-1 {
+  position: absolute;
+  left: 135.4px;
+  top: 42.36px;
+  width: 318.74px;
+  height: 320.94px;
+  border-radius: 50%;
+  opacity: 0.8;
+  background: linear-gradient(180deg, rgba(31, 128, 251, 0) 0%, rgba(73, 152, 251, 0.18) 100%);
+  box-shadow: inset 0 33px 10px 0 rgba(10, 239, 255, 0.3);
+  transform: rotate(108.51deg) scaleY(-1);
+}
+
+.top-bg .deco-2 {
+  position: absolute;
+  left: -59.5px;
+  top: -59px;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  opacity: 0.5;
+  background: linear-gradient(180deg, rgba(31, 128, 251, 0.156) 0%, rgba(73, 152, 251, 0.4) 100%);
+  box-shadow: inset 0 33px 10px 0 rgba(10, 239, 255, 0.3);
+}
+
+.page-title {
+  position: absolute;
+  left: 16px;
+  top: 52px;
+  width: 343px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(18, 81, 173, 0.5);
+}
+
+.svg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+/* 提示为纯展示信息，禁止拦截鼠标，避免遮挡元素选取/点击 */
+.el-message {
+  pointer-events: none;
+}
+
+.svg-icon > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 子页通用：浅灰底 + 内容区留白（NavHeader 88px / 底部操作栏 72px） */
+.sub-page {
+  background: #f4f6fa;
+}
+
+.sub-page .page-scroll {
+  padding: 104px 16px 96px;
+}
+
+/* 子页底部操作栏（毛玻璃 + 双胶囊按钮） */
+.bottom-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 72px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
+.bb-outline,
+.bb-primary {
+  flex: 1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  font-family: 'PingFang SC', Inter, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bb-outline {
+  border: 1px solid #2c66f6;
+  font-weight: 400;
+  color: #2c66f6;
+}
+
+.bb-primary {
+  background: #2c66f6;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.bb-primary.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
