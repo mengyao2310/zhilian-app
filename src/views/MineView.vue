@@ -203,7 +203,7 @@ export default {
 }
 
 .menu-card {
-  margin-top: 158px;
+  margin-top: 143px;
   background: #ffffff;
   border-radius: 12px;
 }
