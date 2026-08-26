@@ -368,7 +368,7 @@ export default {
 .dlg-btn.danger {
   font-weight: 600;
   color: #ffffff;
-  background: #eb1111;
+  background: #f1510b;
 }
 
 .dlg-btn.primary {
