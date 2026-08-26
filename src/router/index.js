@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import FuncView from '../views/FuncView.vue'
 import MineView from '../views/MineView.vue'
 import PasswordView from '../views/PasswordView.vue'
-import CacheView from '../views/CacheView.vue'
 import LoginView from '../views/LoginView.vue'
 
 Vue.use(VueRouter)
@@ -15,7 +14,6 @@ const routes = [
   { path: '/scan', redirect: '/func' },
   { path: '/mine', component: MineView, meta: { tab: 'mine' } },
   { path: '/password', component: PasswordView },
-  { path: '/cache', component: CacheView },
   { path: '/login', component: LoginView }
 ]
 

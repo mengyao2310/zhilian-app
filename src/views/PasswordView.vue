@@ -10,10 +10,10 @@
           </el-form-item>
           <el-form-item label="新密码" prop="newPwd">
             <el-input v-model.trim="form.newPwd" type="password" placeholder="请输入新密码（8-20位）" show-password />
-            <div class="pwd-tip">密码必须包含大写字母、小写字母、数值、特殊符号中至少三种且不少于8位</div>
           </el-form-item>
           <el-form-item label="确认新密码" prop="confirmPwd">
             <el-input v-model.trim="form.confirmPwd" type="password" placeholder="请再次输入新密码" show-password />
+            <div class="pwd-tip">密码必须包含大写字母、小写字母、数值、特殊符号中至少三种且<br />不少于8位</div>
           </el-form-item>
         </el-form>
       </div>

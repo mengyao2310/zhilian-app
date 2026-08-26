@@ -50,6 +50,20 @@
         </div>
       </div>
     </transition>
+
+    <transition name="sheet-fade">
+      <div v-if="sheetCache" class="dialog-mask" @click="sheetCache = false"></div>
+    </transition>
+    <transition name="dialog-pop">
+      <div v-if="sheetCache" class="dialog">
+        <p class="dlg-title">清除缓存</p>
+        <p class="dlg-msg">确定要清除全部缓存吗？</p>
+        <div class="dlg-btns">
+          <div class="dlg-btn" @click="sheetCache = false">取消</div>
+          <div class="dlg-btn danger" @click="doClearCache">确定</div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -64,9 +78,10 @@ export default {
   data() {
     return {
       sheet: false,
+      sheetCache: false,
       menus: [
         { label: '密码修改', icon: 'mine:password', iconSize: 20, height: 44, arrow: true, divider: true, to: '/password' },
-        { label: '清除缓存', icon: 'mine:cache', iconSize: 20, height: 48, arrow: true, divider: true, to: '/cache', value: '' },
+        { label: '清除缓存', icon: 'mine:cache', iconSize: 20, height: 48, arrow: false, divider: true, value: '' },
         { label: '关于系统', icon: 'mine:about', iconSize: 20, height: 48, arrow: false, divider: true, value: 'v2.3.0' },
         { label: '退出登录', icon: 'mine:logout', iconSize: 20, height: 48, arrow: false, divider: false }
       ]
@@ -89,9 +104,19 @@ export default {
         this.sheet = true
         return
       }
+      if (item.label === '清除缓存') {
+        this.sheetCache = true
+        return
+      }
       if (item.to) {
         this.$router.push(item.to)
       }
+    },
+    doClearCache() {
+      this.sheetCache = false
+      localStorage.setItem('app_cache_mb', '0')
+      this.syncCache()
+      this.$message({ message: '缓存已清除', center: true, duration: 1600 })
     },
     doLogout() {
       this.sheet = false
