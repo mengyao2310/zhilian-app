@@ -203,7 +203,7 @@ export default {
 }
 
 .menu-card {
-  margin: 158px 16px 0;
+  margin-top: 158px;
   background: #ffffff;
   border-radius: 12px;
 }
@@ -214,7 +214,7 @@ export default {
 
 .menu-item {
   position: relative;
-  width: 311px;
+  width: 343px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -235,7 +235,7 @@ export default {
   height: 44px;
   border-radius: 22px;
   background: #ffffff;
-  border: 1px solid #eb1111;
+  border: 1px solid #dcdfe6;
 }
 
 .logout-btn .menu-icon,
@@ -246,7 +246,7 @@ export default {
 
 .logout-btn .menu-label {
   margin-left: 0;
-  color: #eb1111;
+  color: #1f2329;
   font-weight: 600;
 }
 
@@ -255,7 +255,7 @@ export default {
 }
 
 .menu-item.logout-btn:active {
-  background: #ffecec;
+  background: #f7f9fe;
 }
 
 .menu-icon {
