@@ -90,7 +90,7 @@ export default {
 
 .form-card >>> .el-form-item__label {
   font-family: 'PingFang SC', Inter, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 32px;
   font-weight: 500;
   color: #1f2329;
