@@ -60,7 +60,7 @@
         <p class="dlg-msg">确定要清除全部缓存吗？</p>
         <div class="dlg-btns">
           <div class="dlg-btn" @click="sheetCache = false">取消</div>
-          <div class="dlg-btn danger" @click="doClearCache">确定</div>
+          <div class="dlg-btn primary" @click="doClearCache">确定</div>
         </div>
       </div>
     </transition>
@@ -341,6 +341,12 @@ export default {
   font-weight: 600;
   color: #ffffff;
   background: #eb1111;
+}
+
+.dlg-btn.primary {
+  font-weight: 600;
+  color: #ffffff;
+  background: #2c66f6;
 }
 
 .dlg-btn:active {
