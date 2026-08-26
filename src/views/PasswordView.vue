@@ -6,14 +6,14 @@
       <div class="form-card">
         <el-form ref="form" :model="form" :rules="rules" label-position="top">
           <el-form-item label="原密码" prop="oldPwd">
-            <el-input v-model.trim="form.oldPwd" type="password" placeholder="请输入原密码" show-password />
+            <el-input v-model.trim="form.oldPwd" type="password" placeholder="请输入密码" show-password />
           </el-form-item>
           <el-form-item label="新密码" prop="newPwd">
-            <el-input v-model.trim="form.newPwd" type="password" placeholder="请输入新密码（8-20位）" show-password />
+            <el-input v-model.trim="form.newPwd" type="password" placeholder="请输入密码" show-password />
           </el-form-item>
           <el-form-item label="确认新密码" prop="confirmPwd">
-            <el-input v-model.trim="form.confirmPwd" type="password" placeholder="请再次输入新密码" show-password />
-            <div class="pwd-tip">密码必须包含大写字母、小写字母、数值、特殊符号中至少三种且<br />不少于8位</div>
+            <el-input v-model.trim="form.confirmPwd" type="password" placeholder="请输入密码" show-password />
+            <div class="pwd-tip">密码必须包含大写字母、小写字母、数值、特殊符号中至少三种且不少于8位</div>
           </el-form-item>
         </el-form>
       </div>
@@ -113,8 +113,9 @@ export default {
 
 .pwd-tip {
   margin-top: 4px;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 9px;
+  line-height: 14px;
+  white-space: nowrap;
   color: #8a919f;
 }
 </style>
