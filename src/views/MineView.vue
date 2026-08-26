@@ -51,6 +51,10 @@
       </div>
     </transition>
 
+    <transition name="toast-fade">
+      <div v-if="toast" class="text-toast">{{ toastText }}</div>
+    </transition>
+
     <transition name="sheet-fade">
       <div v-if="sheetCache" class="dialog-mask" @click="sheetCache = false"></div>
     </transition>
@@ -94,6 +98,8 @@ export default {
       sheet: false,
       sheetCache: false,
       sheetAbout: false,
+      toast: false,
+      toastText: '',
       menus: [
         { label: '密码修改', icon: 'mine:password', iconSize: 20, height: 44, arrow: true, divider: true, to: '/password' },
         { label: '清除缓存', icon: 'mine:cache', iconSize: 20, height: 48, arrow: true, divider: true, value: '' },
@@ -131,7 +137,9 @@ export default {
       this.sheetCache = false
       localStorage.setItem('app_cache_mb', '0')
       this.syncCache()
-      this.$message({ message: '缓存已清除', center: true, duration: 1600 })
+      this.toastText = '缓存已清除'
+      this.toast = true
+      setTimeout(() => { this.toast = false }, 1600)
     },
     doLogout() {
       this.sheet = false
@@ -440,5 +448,40 @@ export default {
 .dialog-pop-leave-to {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* 纯文本 Toast：MasterGo 纯文本提示组件 */
+.text-toast {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 120px;
+  max-width: 280px;
+  height: 38px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, 'PingFang SC', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  z-index: 2000;
+  box-sizing: border-box;
+}
+
+.toast-fade-enter-active,
+.toast-fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.toast-fade-enter,
+.toast-fade-leave-to {
+  opacity: 0;
 }
 </style>
