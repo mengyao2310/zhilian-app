@@ -81,7 +81,7 @@ export default {
       sheetCache: false,
       menus: [
         { label: '密码修改', icon: 'mine:password', iconSize: 20, height: 44, arrow: true, divider: true, to: '/password' },
-        { label: '清除缓存', icon: 'mine:cache', iconSize: 20, height: 48, arrow: false, divider: true, value: '' },
+        { label: '清除缓存', icon: 'mine:cache', iconSize: 20, height: 48, arrow: true, divider: true, value: '' },
         { label: '关于系统', icon: 'mine:about', iconSize: 20, height: 48, arrow: false, divider: true, value: 'v2.3.0' },
         { label: '退出登录', icon: 'mine:logout', iconSize: 20, height: 44, arrow: false, divider: false }
       ]
@@ -297,14 +297,13 @@ export default {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #f2f5fc;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
+  background: #f4f6fa;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #909399;
 }
 
 .dialog-mask {
