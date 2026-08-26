@@ -113,7 +113,6 @@ export default {
 
 .pwd-tip {
   margin-top: 4px;
-  margin-left: -8px;
   font-size: 13px;
   line-height: 20px;
   color: #8a919f;
