@@ -163,7 +163,7 @@ export default {
   top: 49px;
   width: 343px;
   height: 94px;
-  padding: 16px;
+  padding: 16px 0;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
