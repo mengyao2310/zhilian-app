@@ -9,7 +9,8 @@
             <el-input v-model.trim="form.oldPwd" type="password" placeholder="请输入原密码" show-password />
           </el-form-item>
           <el-form-item label="新密码" prop="newPwd">
-            <el-input v-model.trim="form.newPwd" type="password" placeholder="请输入新密码（6-20位）" show-password />
+            <el-input v-model.trim="form.newPwd" type="password" placeholder="请输入新密码（8-20位）" show-password />
+            <div class="pwd-tip">密码必须包含大写字母、小写字母、数值、特殊符号中至少三种且不少于8位</div>
           </el-form-item>
           <el-form-item label="确认新密码" prop="confirmPwd">
             <el-input v-model.trim="form.confirmPwd" type="password" placeholder="请再次输入新密码" show-password />
@@ -38,6 +39,12 @@ export default {
       if (value !== this.form.newPwd) callback(new Error('两次输入的密码不一致'))
       else callback()
     }
+    const checkPwdStrength = (rule, value, callback) => {
+      if (!value) return callback()
+      const kinds = [/[A-Z]/, /[a-z]/, /\d/, /[^A-Za-z0-9]/].filter(re => re.test(value)).length
+      if (kinds < 3) callback(new Error('密码需包含大写字母、小写字母、数字、特殊符号中至少三种'))
+      else callback()
+    }
     return {
       saving: false,
       form: { oldPwd: '', newPwd: '', confirmPwd: '' },
@@ -45,7 +52,8 @@ export default {
         oldPwd: [{ required: true, message: '请输入原密码', trigger: 'blur' }],
         newPwd: [
           { required: true, message: '请输入新密码', trigger: 'blur' },
-          { min: 6, max: 20, message: '密码长度为 6-20 位', trigger: 'blur' }
+          { min: 8, max: 20, message: '密码长度为 8-20 位', trigger: 'blur' },
+          { validator: checkPwdStrength, trigger: 'blur' }
         ],
         confirmPwd: [
           { required: true, message: '请再次输入新密码', trigger: 'blur' },
@@ -101,5 +109,12 @@ export default {
 
 .form-card >>> .el-input__inner:focus {
   border-bottom-color: #2c66f6;
+}
+
+.pwd-tip {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #8a919f;
 }
 </style>
