@@ -20,7 +20,7 @@
             v-for="item in menus"
             :key="item.label"
             class="menu-item"
-            :class="{ 'no-line': !item.divider }"
+            :class="{ 'no-line': !item.divider, 'logout-btn': item.label === '退出登录' }"
             :style="{ height: item.height + 'px' }"
             @click="onMenu(item)"
           >
@@ -83,7 +83,7 @@ export default {
         { label: '密码修改', icon: 'mine:password', iconSize: 20, height: 44, arrow: true, divider: true, to: '/password' },
         { label: '清除缓存', icon: 'mine:cache', iconSize: 20, height: 48, arrow: false, divider: true, value: '' },
         { label: '关于系统', icon: 'mine:about', iconSize: 20, height: 48, arrow: false, divider: true, value: 'v2.3.0' },
-        { label: '退出登录', icon: 'mine:logout', iconSize: 20, height: 48, arrow: false, divider: false }
+        { label: '退出登录', icon: 'mine:logout', iconSize: 20, height: 44, arrow: false, divider: false }
       ]
     }
   },
@@ -163,7 +163,7 @@ export default {
   top: 49px;
   width: 343px;
   height: 94px;
-  padding: 16px 12px;
+  padding: 16px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -225,8 +225,33 @@ export default {
   border-bottom: none;
 }
 
+.menu-item.logout-btn {
+  margin-top: 12px;
+  justify-content: center;
+  height: 44px;
+  border-radius: 22px;
+  background: #eb1111;
+  border-bottom: none;
+}
+
+.logout-btn .menu-icon,
+.logout-btn .menu-value,
+.logout-btn .menu-arrow {
+  display: none;
+}
+
+.logout-btn .menu-label {
+  margin-left: 0;
+  color: #ffffff;
+  font-weight: 600;
+}
+
 .menu-item:active {
   background: #f7f9fe;
+}
+
+.menu-item.logout-btn:active {
+  background: #c40d0d;
 }
 
 .menu-icon {
