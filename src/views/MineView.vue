@@ -265,6 +265,13 @@ export default {
   align-items: center;
   justify-content: flex-start;
   flex: none;
+  /* 上移 6px（行间距 12px 的一半）：使内容居中于两条分割线之间的视觉带 */
+  transform: translateY(-6px);
+}
+
+/* logout 行的 label 已居中于自身视觉带，不上移 */
+.menu-item:not(.logout-btn) .menu-label {
+  transform: translateY(-6px);
 }
 
 .menu-label {
@@ -279,7 +286,7 @@ export default {
 .menu-value {
   position: absolute;
   right: 0;
-  top: 50%;
+  top: calc(50% - 6px);
   transform: translateY(-50%);
   font-family: Inter, 'PingFang SC', sans-serif;
   font-size: 14px;
@@ -295,7 +302,7 @@ export default {
 .menu-arrow {
   position: absolute;
   right: 0;
-  top: 50%;
+  top: calc(50% - 6px);
   transform: translateY(-50%);
   width: 22px;
   height: 22px;
