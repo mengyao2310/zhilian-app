@@ -4,7 +4,7 @@
 
     <div class="page-scroll">
       <div class="form-card">
-        <el-form ref="form" :model="form" :rules="rules" label-position="top">
+        <el-form ref="form" :model="form" :rules="rules" label-position="right" label-width="90px">
           <el-form-item label="原密码" prop="oldPwd">
             <el-input v-model.trim="form.oldPwd" type="password" placeholder="请输入密码" show-password />
           </el-form-item>
@@ -91,7 +91,7 @@ export default {
 .form-card >>> .el-form-item__label {
   font-family: 'PingFang SC', Inter, sans-serif;
   font-size: 14px;
-  line-height: 32px;
+  line-height: 40px;
   font-weight: 500;
   color: #1f2329;
   padding: 0;
@@ -113,7 +113,6 @@ export default {
 
 .pwd-tip {
   margin-top: 4px;
-  margin-left: -8px;
   font-size: 13px;
   line-height: 20px;
   color: #8a919f;
