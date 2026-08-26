@@ -101,7 +101,7 @@ export default {
   border: none;
   border-bottom: 1px solid #f2f5fc;
   border-radius: 0;
-  padding: 0 2px;
+  padding: 0;
   font-size: 15px;
   color: #1f2329;
   transition: border-color 0.25s ease;
@@ -112,7 +112,7 @@ export default {
 }
 
 .pwd-tip {
-  margin-top: 4px;
+  margin-top: 12px;
   font-size: 13px;
   line-height: 20px;
   color: #8a919f;
