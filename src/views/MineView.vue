@@ -269,11 +269,6 @@ export default {
   transform: translateY(-6px);
 }
 
-/* logout 行的 label 已居中于自身视觉带，不上移 */
-.menu-item:not(.logout-btn) .menu-label {
-  transform: translateY(-6px);
-}
-
 .menu-label {
   margin-left: 8px;
   font-family: Inter, 'PingFang SC', sans-serif;
@@ -281,6 +276,8 @@ export default {
   line-height: 24px;
   font-weight: 500;
   color: #3d3d3d;
+  /* 上移 6px（行间距 12px 的一半）：使内容居中于两条分割线之间的视觉带 */
+  transform: translateY(-6px);
 }
 
 .menu-value {
