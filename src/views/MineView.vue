@@ -64,6 +64,20 @@
         </div>
       </div>
     </transition>
+
+    <transition name="sheet-fade">
+      <div v-if="sheetAbout" class="dialog-mask" @click="sheetAbout = false"></div>
+    </transition>
+    <transition name="dialog-pop">
+      <div v-if="sheetAbout" class="dialog about-dialog">
+        <p class="dlg-title">关于系统</p>
+        <p class="dlg-msg">机电运维数智化平台</p>
+        <p class="dlg-msg about-version">版本 v2.3.0</p>
+        <div class="dlg-btns">
+          <div class="dlg-btn primary" @click="sheetAbout = false">知道了</div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -79,10 +93,11 @@ export default {
     return {
       sheet: false,
       sheetCache: false,
+      sheetAbout: false,
       menus: [
         { label: '密码修改', icon: 'mine:password', iconSize: 20, height: 44, arrow: true, divider: true, to: '/password' },
         { label: '清除缓存', icon: 'mine:cache', iconSize: 20, height: 48, arrow: true, divider: true, value: '' },
-        { label: '关于系统', icon: 'mine:about', iconSize: 20, height: 48, arrow: false, divider: true, value: 'v2.3.0' },
+        { label: '关于系统', icon: 'mine:about', iconSize: 20, height: 48, arrow: true, divider: true, value: 'v2.3.0' },
         { label: '退出登录', icon: 'mine:logout', iconSize: 20, height: 44, arrow: false, divider: false }
       ]
     }
@@ -106,6 +121,10 @@ export default {
       }
       if (item.label === '清除缓存') {
         this.sheetCache = true
+        return
+      }
+      if (item.label === '关于系统') {
+        this.sheetAbout = true
         return
       }
       if (item.to) {
@@ -248,6 +267,7 @@ export default {
   margin-left: 0;
   color: #1f2329;
   font-weight: 600;
+  transform: translateY(0);
 }
 
 .menu-item:active {
@@ -386,6 +406,16 @@ export default {
   font-weight: 600;
   color: #ffffff;
   background: #2c66f6;
+}
+
+.about-dialog .dlg-msg {
+  text-align: center;
+}
+
+.about-dialog .about-version {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #606266;
 }
 
 .dlg-btn:active {
