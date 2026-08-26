@@ -306,6 +306,13 @@ export default {
   justify-content: center;
 }
 
+/* 行内 svg 图标垂直居中：修正 inline 基线导致的整体偏下 */
+.menu-item >>> .svg-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .dialog-mask {
   position: absolute;
   inset: 0;
