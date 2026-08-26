@@ -21,8 +21,8 @@
               >
                 <span class="entry-icon" :style="{ background: entry.gradient }">
                   <SvgIcon :name="entry.icon" :size="17.5" />
+                  <span v-if="entry.badge" class="entry-badge">{{ entry.badge }}</span>
                 </span>
-                <span v-if="entry.badge" class="entry-badge">{{ entry.badge }}</span>
                 <span class="entry-label">{{ entry.label }}</span>
               </div>
             </div>
@@ -128,6 +128,7 @@ export default {
 }
 
 .entry-icon {
+  position: relative;
   width: 32px;
   height: 32px;
   border-radius: 6.86px;
@@ -139,11 +140,11 @@ export default {
 
 .entry-badge {
   position: absolute;
-  top: -8px;
-  right: 1px;
+  top: -6px;
+  right: -8px;
   min-width: 15px;
-  height: 20px;
-  padding: 0 6px;
+  height: 16px;
+  padding: 0 5px;
   border-radius: 100px;
   background: #f53f3f;
   display: flex;
@@ -152,7 +153,7 @@ export default {
   font-family: Inter, 'PingFang SC', sans-serif;
   font-size: 10px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 16px;
   color: #ffffff;
 }
 

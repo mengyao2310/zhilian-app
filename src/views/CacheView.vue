@@ -140,11 +140,15 @@ export default {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  padding: 10px 22px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.72);
   font-family: 'PingFang SC', Inter, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
-  color: #1f2329;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
   z-index: 20;
   pointer-events: none;
 }
