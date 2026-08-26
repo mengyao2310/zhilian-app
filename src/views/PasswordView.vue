@@ -113,9 +113,9 @@ export default {
 
 .pwd-tip {
   margin-top: 4px;
-  font-size: 9px;
-  line-height: 14px;
-  white-space: nowrap;
+  margin-left: -8px;
+  font-size: 13px;
+  line-height: 20px;
   color: #8a919f;
 }
 </style>
