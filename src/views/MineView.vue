@@ -209,12 +209,12 @@ export default {
 }
 
 .menu-list {
-  padding: 28px;
+  padding: 16px;
 }
 
 .menu-item {
   position: relative;
-  width: 319px;
+  width: 343px;
   display: flex;
   align-items: center;
   cursor: pointer;
