@@ -97,7 +97,7 @@ export default {
       menus: [
         { label: '密码修改', icon: 'mine:password', iconSize: 20, height: 44, arrow: true, divider: true, to: '/password' },
         { label: '清除缓存', icon: 'mine:cache', iconSize: 20, height: 48, arrow: true, divider: true, value: '' },
-        { label: '关于系统', icon: 'mine:about', iconSize: 20, height: 48, arrow: true, divider: true, value: 'v2.3.0' },
+        { label: '关于系统', icon: 'mine:about', iconSize: 20, height: 48, arrow: false, divider: true, value: 'v2.3.0' },
         { label: '退出登录', icon: 'mine:logout', iconSize: 20, height: 44, arrow: false, divider: false }
       ]
     }
@@ -121,10 +121,6 @@ export default {
       }
       if (item.label === '清除缓存') {
         this.sheetCache = true
-        return
-      }
-      if (item.label === '关于系统') {
-        this.sheetAbout = true
         return
       }
       if (item.to) {
