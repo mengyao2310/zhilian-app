@@ -68,20 +68,6 @@
         </div>
       </div>
     </transition>
-
-    <transition name="sheet-fade">
-      <div v-if="sheetAbout" class="dialog-mask" @click="sheetAbout = false"></div>
-    </transition>
-    <transition name="dialog-pop">
-      <div v-if="sheetAbout" class="dialog about-dialog">
-        <p class="dlg-title">关于系统</p>
-        <p class="dlg-msg">机电运维数智化平台</p>
-        <p class="dlg-msg about-version">版本 v2.3.0</p>
-        <div class="dlg-btns">
-          <div class="dlg-btn primary" @click="sheetAbout = false">知道了</div>
-        </div>
-      </div>
-    </transition>
   </div>
 </template>
 
@@ -97,7 +83,6 @@ export default {
     return {
       sheet: false,
       sheetCache: false,
-      sheetAbout: false,
       toast: false,
       toastText: '',
       menus: [
@@ -410,16 +395,6 @@ export default {
   font-weight: 600;
   color: #ffffff;
   background: #2c66f6;
-}
-
-.about-dialog .dlg-msg {
-  text-align: center;
-}
-
-.about-dialog .about-version {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #606266;
 }
 
 .dlg-btn:active {
