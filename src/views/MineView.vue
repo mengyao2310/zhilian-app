@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <div class="top-bg mine-top">
+      <FluidCanvas class="mine-shader" />
       <div class="mine-circle-1"></div>
       <div class="mine-circle-2"></div>
       <StatusBar />
@@ -73,12 +74,12 @@
 
 <script>
 import StatusBar from '../components/StatusBar.vue'
-
+import FluidCanvas from '../components/FluidCanvas.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 
 export default {
   name: 'MineView',
-  components: { StatusBar, SvgIcon },
+  components: { StatusBar, FluidCanvas, SvgIcon },
   data() {
     return {
       sheet: false,
@@ -135,6 +136,15 @@ export default {
 </script>
 
 <style scoped>
+.mine-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 .mine-top {
   height: 186px;
 }
