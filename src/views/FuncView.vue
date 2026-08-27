@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <div class="top-bg">
+      <FluidCanvas class="func-shader" />
       <div class="deco-1"></div>
       <div class="deco-2"></div>
       <StatusBar />
@@ -35,12 +36,13 @@
 
 <script>
 import StatusBar from '../components/StatusBar.vue'
+import FluidCanvas from '../components/FluidCanvas.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import cards from '../data/functionData.js'
 
 export default {
   name: 'FuncView',
-  components: { StatusBar, SvgIcon },
+  components: { StatusBar, FluidCanvas, SvgIcon },
   data() {
     return { cards }
   },
@@ -65,6 +67,16 @@ export default {
 </script>
 
 <style scoped>
+/* 头部动态着色器：铺满顶栏，装饰圆环与标题置于其上 */
+.func-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 /* 蓝色背景垫在最底层（顶部横幅的蓝），渐变背景层叠加其上 */
 .page {
   background: linear-gradient(179deg, #2c66f6 0%, #2c12ee 98%);
