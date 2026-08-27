@@ -36,13 +36,13 @@ const float SWIRL = 0.2;
 const int COLOR_COUNT = 2;
 
 // 色彩聚合度：[1.5, 6.0]
-const float DIST_POWER = 4;
+const float DIST_POWER = 4.0;
 
 // 色彩边缘颗粒：[0.0, 1.0]
-const float GRAIN_MIXER = 0;
+const float GRAIN_MIXER = 0.0;
 
 // 全屏颗粒叠加：[0.0, 1.0]
-const float GRAIN_OVERLAY = 0;
+const float GRAIN_OVERLAY = 0.0;
 
 // 色彩1
 const vec4 COLOR_0 = vec4(0.1725, 0.0706, 0.8863, 1.0000);
